@@ -172,7 +172,68 @@ DynamoDB, OpenSearch, S3, Redis, CloudWatch, IAM, KMS, Angular
 
 ## Purpose
 
-This repository demonstrates real-world enterprise platform design
-using agentic AI responsibly and modularly.
+This repository demonstrates real-world enterprise platform design using agentic AI responsibly and modularly.
 
 ---
+
+## Platform Overview
+
+The Enterprise IT Operations Intelligence Platform is a modular, enterprise-grade platform that provides decision intelligence across complex IT platforms. It reasons over operational signals such as metrics,
+logs, traces, deployments, topology, events, and cost, and produces explainable, actionable insights.
+
+---
+
+## Solutions & Facades – Capability Matrix
+
+| Solution / Facade Name | What Problem It Solves | Invocation Model (On‑Demand / Scheduled / Automatic) | Input Parameters (DTOs) | Output Parameters (DTOs) | Agents Involved | Agentic AI Tools | Orchestration Frameworks | LLM Usage (Config‑Driven) |
+|-----------------------|-----------------------|-------------------------------------------------------|-------------------------|--------------------------|-----------------|------------------|--------------------------|---------------------------|
+| **PlatformHealthFacade** | Explains platform degradation by correlating metrics, logs, and traces | On‑demand, Scheduled health checks, Alert‑triggered | Time window, service scope, metrics summary, error rates, latency percentiles, anomaly indicators | Health status, contributing services, probable causes, confidence score | Observability Agent, Decision Agent | Metrics retrieval, log summarization, trace correlation | LangGraph (primary), Step Functions (alternative) | Optional – used for reasoning & explanation |
+| **DeploymentImpactFacade** | Determines whether deployments caused incidents and estimates blast radius | Automatic on deployment, On‑demand during incidents | Deployment ID, change metadata, affected services, pre/post metrics | Impact score, affected services, rollback vs observe recommendation | Deployment Analysis Agent, Topology Agent, Decision Agent | Deployment metadata tool, dependency graph analysis | Step Functions (primary), LangGraph (optional) | Optional – explanation & rationale |
+| **EventDrivenOpsFacade** | Reconstructs timelines and causal chains from asynchronous platform events | Automatic (event‑driven) | Event payloads, timestamps, correlation IDs | Reconstructed timeline, causal chain, suspected origin | Event Correlation Agent | Event stream consumers (SQS / EventBridge / Kafka) | Event‑driven workflows (no LangGraph) | Minimal – summarization only |
+| **TopologyIntelligenceFacade** | Provides service dependency and blast‑radius intelligence | On‑demand, Cached refresh | Service identifier, environment, dependency depth | Upstream/downstream dependencies, risk zones | Topology Agent | Service registry lookup, dependency graph traversal | Direct invocation (no workflow engine) | Optional – natural language explanation |
+| **CostOptimizationFacade** | Identifies cost inefficiencies and explains cost/performance trade‑offs | Scheduled (daily/weekly), On‑demand | Cost snapshots, utilization metrics, traffic patterns | Optimization recommendations, estimated savings, risk trade‑offs | Cost Analysis Agent, Decision Agent | Cost analysis, utilization correlation | Step Functions (batch), LangGraph (optional) | Optional – trade‑off explanation |
+| **ExecutiveNarrativeFacade** | Converts technical signals into executive‑level decision narratives | On‑demand, Post‑incident reporting | Incident summaries, decisions, supporting evidence | Executive summary, key risks, recommended actions | Narrative Agent | Multi‑source synthesis | Direct invocation, optional LangGraph | **Required** – selected from approved LLM list |
+
+---
+
+## LLM Strategy
+
+| Aspect | Description |
+|------|-------------|
+| Supported Models | AWS Bedrock LLMs, Azure OpenAI, other enterprise‑approved models |
+| Selection | Configuration‑driven per environment |
+| Usage Policy | Optional for deterministic workflows; required only where narrative reasoning is needed |
+| Security | No static secrets; IAM‑based access; prompts not persisted by default |
+
+---
+
+## Orchestration Strategy
+
+| Orchestration Type | When Used |
+|------------------|-----------|
+| LangGraph | Interactive, reasoning‑heavy, multi‑signal workflows |
+| AWS Step Functions | Deterministic, auditable, long‑running workflows |
+| Event‑Driven (SQS / EventBridge) | Reactive, asynchronous processing |
+| Custom Python | Lightweight, low‑latency execution paths |
+
+---
+
+## Deployment Model
+
+| Aspect | Details |
+|------|--------|
+| Local Development | AWS named profiles, local config |
+| Cloud Runtime | IAM roles (Lambda / IRSA for EKS) |
+| Environments | dev, qa, preprod, prod |
+| CI/CD | Manual GitHub workflows with approvals |
+| Secrets | AWS Secrets Manager, KMS |
+
+---
+
+## Purpose
+
+This repository demonstrates **enterprise‑grade platform architecture** and responsible use of
+agentic AI, emphasizing modularity, governance, and long‑term evolvability.
+
+---
+

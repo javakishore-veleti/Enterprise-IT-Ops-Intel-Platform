@@ -1,9 +1,6 @@
 
 # Enterprise IT Operations Intelligence Platform
 
-## Repository Name
-**enterprise-it-ops-intel-platform**
-
 ---
 
 ## Overview

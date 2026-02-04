@@ -176,13 +176,6 @@ This repository demonstrates real-world enterprise platform design using agentic
 
 ---
 
-## Platform Overview
-
-The Enterprise IT Operations Intelligence Platform is a modular, enterprise-grade platform that provides decision intelligence across complex IT platforms. It reasons over operational signals such as metrics,
-logs, traces, deployments, topology, events, and cost, and produces explainable, actionable insights.
-
----
-
 ## Solutions & Facades – Capability Matrix
 
 | Solution / Facade Name | What Problem It Solves | Invocation Model (On‑Demand / Scheduled / Automatic) | Input Parameters (DTOs) | Output Parameters (DTOs) | Agents Involved | Agentic AI Tools | Orchestration Frameworks | LLM Usage (Config‑Driven) |

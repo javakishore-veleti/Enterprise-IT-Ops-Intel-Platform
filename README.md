@@ -42,7 +42,7 @@ This platform reflects how large enterprises design internal platforms: modular,
 
 ## High-Level Architecture
 
-UI / Portals  
+→ UI / Portals  
 → API Gateway  
 → Solution Facades  
 → Agents & Services  

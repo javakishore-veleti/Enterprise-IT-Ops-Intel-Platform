@@ -9,13 +9,12 @@
 ## Overview
 
 The **Enterprise IT Operations Intelligence Platform** is a modular, enterprise-grade platform designed to deliver
-decision intelligence across complex IT and digital platforms. It reasons over live operational signals
-(metrics, logs, traces, deployments, topology, and cost) and provides explainable insights and
+decision intelligence across complex IT and digital platforms. 
+
+This platform reasons over live operational signals (metrics, logs, traces, deployments, topology, and cost) and provides explainable insights and
 recommendations for engineers, SREs, platform teams, and technology leadership.
 
-This repository is intentionally **not a demo or learning project**.  
-It reflects how large enterprises design internal platforms: modular, governed, extensible,
-and deployable across multiple environments.
+This platform reflects how large enterprises design internal platforms: modular, governed, extensible, and deployable across multiple environments.
 
 ---
 

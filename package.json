@@ -1,0 +1,7 @@
+{
+  "name": "enterprise-it-ops-intel-platform",
+  "version": "1.0.0",
+  "scripts": {
+    "setup_sol_platform_health": "bash Project_Setup/Scripts/platform_health/setup_run_all.sh"
+  }
+}

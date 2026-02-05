@@ -1,5 +1,5 @@
 
-# Platform Health Intelligence Solution
+# Platform Health Intelligence Solution (A Facade)
 
 ## Facade
 **PlatformHealthFacade**

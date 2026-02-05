@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-source "$(dirname "$0")/setup_env_vars.sh"
+# Resolve the directory of THIS script even when sourced
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+source "$SCRIPT_DIR/setup_env_vars.sh"
 
 if [[ ! -d "$VENV_DIR" ]]; then
   echo "❌ Virtualenv does not exist. Run setup_venv_create first."

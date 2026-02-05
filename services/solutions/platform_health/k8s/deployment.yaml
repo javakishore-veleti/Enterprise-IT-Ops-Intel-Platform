@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: platform-health
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: platform-health
+  template:
+    metadata:
+      labels:
+        app: platform-health
+    spec:
+      containers:
+      - name: platform-health
+        image: platform-health:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: AWS_REGION
+          value: us-east-1

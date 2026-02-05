@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: platform-health
+spec:
+  selector:
+    app: platform-health
+  ports:
+  - port: 80
+    targetPort: 8000

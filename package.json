@@ -2,6 +2,15 @@
   "name": "enterprise-it-ops-intel-platform",
   "version": "1.0.0",
   "scripts": {
-    "setup_sol_platform_health": "bash Project_Setup/Scripts/platform_health/setup_run_all.sh"
+    "setup_sol_platform_health": "bash Project_Setup/Scripts/platform_health/setup_run_all.sh",
+    "setup_venv_create": "bash Project_Setup/Scripts/python_venv/setup_venv_create.sh",
+    "setup_venv_delete": "bash Project_Setup/Scripts/python_venv/setup_venv_delete.sh",
+    "setup_venv_requirements": "bash Project_Setup/Scripts/python_venv/setup_venv_requirements.sh",
+    "setup_venv_status": "bash Project_Setup/Scripts/python_venv/setup_venv_status.sh",
+
+    "setup_venv_activate": "echo \"Run: source Project_Setup/Scripts/python_venv/setup_venv_activate.sh\"",
+    "setup_venv_deactivate": "echo \"Run: source Project_Setup/Scripts/python_venv/setup_venv_deactivate.sh\"",
+
+    "setup_platform_health": "bash Project_Setup/Scripts/platform_health/setup_run_all.sh"
   }
 }

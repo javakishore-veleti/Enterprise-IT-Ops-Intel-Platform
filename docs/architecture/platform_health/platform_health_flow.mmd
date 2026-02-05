@@ -1,0 +1,6 @@
+flowchart LR
+    A[Invocation] --> B[PlatformHealthFacade]
+    B --> C[Observability Agent]
+    C --> D[Metrics / Logs / Traces]
+    C --> E[Decision Agent]
+    E --> F[Health Decision]

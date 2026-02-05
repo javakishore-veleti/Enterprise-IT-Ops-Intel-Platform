@@ -1,0 +1,15 @@
+{
+  "title": "Platform Health Intelligence",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Health Status Confidence",
+      "targets": []
+    },
+    {
+      "type": "table",
+      "title": "Top Contributing Services",
+      "targets": []
+    }
+  ]
+}

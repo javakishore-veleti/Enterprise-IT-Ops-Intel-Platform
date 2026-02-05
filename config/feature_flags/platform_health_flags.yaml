@@ -1,0 +1,5 @@
+platform_health:
+  enable_llm_reasoning: true
+  enable_anomaly_correlation: true
+  enable_event_triggering: false
+  rollout_percentage: 100

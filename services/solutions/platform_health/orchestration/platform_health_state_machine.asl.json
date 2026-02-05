@@ -1,0 +1,15 @@
+{
+  "Comment": "Platform Health Intelligence Workflow",
+  "StartAt": "AnalyzePlatformHealth",
+  "States": {
+    "AnalyzePlatformHealth": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "platform-health-analyze",
+        "Payload.$": "$"
+      },
+      "End": true
+    }
+  }
+}
